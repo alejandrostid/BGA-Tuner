@@ -20,14 +20,15 @@
         app:layout_constraintVertical_bias="0.048"></View>
 
     <View
-        android:layout_width="340dp"
-        android:layout_height="340dp"
+        android:layout_width="321dp"
+        android:layout_height="321dp"
         android:background="@drawable/emnose"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.466"></View>
+        app:layout_constraintVertical_bias="0.316"></View>
 
     <View
         android:id="@+id/view"
@@ -60,7 +61,7 @@
         android:id="@+id/btnOir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="396dp"
+        android:layout_marginBottom="420dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

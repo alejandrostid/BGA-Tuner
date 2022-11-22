@@ -1,42 +1,39 @@
 package com.example.helloworld
 
-import android.media.AudioManager
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.Toast
-import java.io.IOException
-import kotlin.math.log
 
 class MainActivity2 : AppCompatActivity() {
-    private var mediaPlayer : MediaPlayer? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+        var btnSol = findViewById<Button>(R.id.btnSOL)
+        btnSol.setOnClickListener { sonido( R.raw.onlineguitartunerg3)}
         var btnMi = findViewById<Button>(R.id.btnMi)
-        btnMi.setOnClickListener{Sonido()}
+        btnMi.setOnClickListener { sonido() }
+        var btnDo = findViewById<Button>(R.id.btnDo)
+        btnDo.setOnClickListener { sonido() }
+        var btnRe = findViewById<Button>(R.id.btnRe)
+        btnRe.setOnClickListener { sonido() }
+        var btnFa = findViewById<Button>(R.id.btnFa)
+        btnFa.setOnClickListener { sonido() }
+        var btnLa = findViewById<Button>(R.id.btnLa)
+        btnLa.setOnClickListener { sonido() }
+        var btnSi = findViewById<Button>(R.id.btnSi)
+        btnSi.setOnClickListener { sonido() }
+        var btnSolS = findViewById<Button>(R.id.btnSOLS)
+        btnSolS.setOnClickListener { sonido() }
+        var btnDoS = findViewById<Button>(R.id.btnDoS)
+        btnDoS.setOnClickListener { sonido() }
+        var btnFaS = findViewById<Button>(R.id.btnFaS)
+        btnFaS.setOnClickListener { sonido() }
+        var btnLaS = findViewById<Button>(R.id.btnLaS)
+        btnLaS.setOnClickListener { sonido() }
     }
-
-    private fun Sonido() {
-        playNote()
-    }
-
-    private fun playNote() {
-        val audioUrl="http://www.sonidosmp3gratis.com/sounds/online-guitar-tuner-g3-.mp3"
-        mediaPlayer = MediaPlayer()
-        mediaPlayer!!.setAudioStreamType(AudioManager.STREAM_MUSIC)
-        try {
-            print("esta activa esta opcion")
-            mediaPlayer!!.setDataSource(audioUrl)
-            mediaPlayer!!.prepare()
-            mediaPlayer!!.start()
-        }catch (e: IOException){
-            e.printStackTrace()
-            print("a fallado")
+        private fun sonido(nota:R) {
+            val mp = MediaPlayer.create(this, nota)
+            mp.start()
         }
-        Toast.makeText(this,"comienza a sonar", Toast.LENGTH_SHORT).show()
-
     }
-}
