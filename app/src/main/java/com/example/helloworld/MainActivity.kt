@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val btnOir = findViewById<Button>(R.id.btnOir)
         btnOir.setOnClickListener { checkPermissions() }
-        val btnpass = findViewById<Button>(R.id.button2)
+        var btnpass = findViewById<Button>(R.id.button2)
         btnpass.setOnClickListener {
             val inert = Intent(this, MainActivity2::class.java)
             startActivity(inert)
