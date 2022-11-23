@@ -1,38 +1,43 @@
 package com.example.helloworld
 
+import android.annotation.SuppressLint
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
 class MainActivity2 : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        var btnSol = findViewById<Button>(R.id.btnSOL)
-        btnSol.setOnClickListener { sonido( R.raw.onlineguitartunerg3)}
+        var btnSol = findViewById<Button>(R.id.btnSolS)
+        btnSol.setOnClickListener { sonido(R.raw.onlineguitartunerg3)}
         var btnMi = findViewById<Button>(R.id.btnMi)
-        btnMi.setOnClickListener { sonido() }
+        btnMi.setOnClickListener { sonido(R.raw.onlineguitartunere2) }
         var btnDo = findViewById<Button>(R.id.btnDo)
-        btnDo.setOnClickListener { sonido() }
+        //btnDo.setOnClickListener { sonido()}
         var btnRe = findViewById<Button>(R.id.btnRe)
-        btnRe.setOnClickListener { sonido() }
+        btnRe.setOnClickListener { sonido(R.raw.onlineguitartunerd3) }
         var btnFa = findViewById<Button>(R.id.btnFa)
-        btnFa.setOnClickListener { sonido() }
+        //btnFa.setOnClickListener { sonido()}
         var btnLa = findViewById<Button>(R.id.btnLa)
-        btnLa.setOnClickListener { sonido() }
+        btnLa.setOnClickListener { sonido(R.raw.onlineguitartunera2) }
         var btnSi = findViewById<Button>(R.id.btnSi)
-        btnSi.setOnClickListener { sonido() }
-        var btnSolS = findViewById<Button>(R.id.btnSOLS)
-        btnSolS.setOnClickListener { sonido() }
+        btnSi.setOnClickListener { sonido(R.raw.onlineguitartunerb3) }
+        var btnSolS = findViewById<Button>(R.id.btnSOL)
+        btnSolS.setOnClickListener { sonido(R.raw.guitarraafinarcuerdatres) }
         var btnDoS = findViewById<Button>(R.id.btnDoS)
-        btnDoS.setOnClickListener { sonido() }
+        //btnDoS.setOnClickListener { sonido() }
         var btnFaS = findViewById<Button>(R.id.btnFaS)
-        btnFaS.setOnClickListener { sonido() }
+        //btnFaS.setOnClickListener { sonido() }
         var btnLaS = findViewById<Button>(R.id.btnLaS)
-        btnLaS.setOnClickListener { sonido() }
+        //btnLaS.setOnClickListener { sonido() }
+
+        var btnMi6 = findViewById<Button>(R.id.btnMi6)
+        btnMi6.setOnClickListener { sonido(R.raw.guitarraafinarcuerdaseis) }
     }
-        private fun sonido(nota:R) {
+        private fun sonido(nota: Int) {
             val mp = MediaPlayer.create(this, nota)
             mp.start()
         }
