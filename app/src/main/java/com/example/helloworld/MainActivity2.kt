@@ -1,10 +1,12 @@
 package com.example.helloworld
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 
 class MainActivity2 : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -36,6 +38,11 @@ class MainActivity2 : AppCompatActivity() {
 
         var btnMi6 = findViewById<Button>(R.id.btnMi6)
         btnMi6.setOnClickListener { sonido(R.raw.guitarraafinarcuerdaseis) }
+
+        var frecuencia = findViewById<Button>(R.id.frecuencia)
+        frecuencia.setOnClickListener{ val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        }
     }
         private fun sonido(nota: Int) {
             val mp = MediaPlayer.create(this, nota)

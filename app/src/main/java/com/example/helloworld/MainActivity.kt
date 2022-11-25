@@ -1,5 +1,6 @@
 package com.example.helloworld
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
@@ -11,12 +12,13 @@ import androidx.core.content.ContextCompat
 import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btnOir = findViewById<Button>(R.id.btnOir)
         btnOir.setOnClickListener { checkPermissions() }
-        var btnpass = findViewById<Button>(R.id.button2)
+        var btnpass = findViewById<Button>(R.id.notas)
         btnpass.setOnClickListener {
             val inert = Intent(this, MainActivity2::class.java)
             startActivity(inert)
